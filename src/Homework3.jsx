@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function App() {
+export default function Homework3() {
   //Bài 1
   const [inputValue, setInputValue] = useState('')
   const handleChange = (event) => {

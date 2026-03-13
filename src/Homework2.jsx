@@ -7,14 +7,11 @@ export default function Homework2() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    try {
-      fetch('https://dogapi.dog/api/v2/breeds')
-        .then(res => res.json())
-        .then(dogs => { setData(dogs.data) })
-        .finally(() => setIsLoading(false))
-    } catch (error) {
-      setError(error.message)
-    }
+    fetch('https://dogapi.dog/api/v2/breeds')
+      .then(res => res.json())
+      .then(dogs => { setData(dogs.data) })
+      .catch(error => { setError(error.message) })
+      .finally(() => setIsLoading(false))
   }, [])
 
   if (error) return <p>{error}</p>
